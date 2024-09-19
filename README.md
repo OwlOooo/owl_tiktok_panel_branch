@@ -31,7 +31,7 @@ TG交流群：[点击这里](https://t.me/+BRD15JUPyhxhZDFh)
 1. 使用以下命令下载安装脚本：
 
    ```bash
-   curl -sSL https://raw.githubusercontent.com/OwlOooo/owl_tiktok_panel/main/install.sh?token=GHSAT0AAAAAACW45XKUWBFPGAJLFFGHHGZAZXL3YVA -H "Cache-Control: no-cache, no-store, must-revalidate" -H "Pragma: no-cache" -H "Expires: 0" -o  install.sh && sh install.sh
+   curl -sSL https://raw.githubusercontent.com/OwlOooo/owl_tiktok_panel/main/install.sh?token=GHSAT0AAAAAACW45XKVKJ2CFWTJPTKU72D2ZXL4MRA -H "Cache-Control: no-cache, no-store, must-revalidate" -H "Pragma: no-cache" -H "Expires: 0" -o  install.sh && sh install.sh
 
 
 #### 使用说明
