@@ -37,7 +37,7 @@ services:
     ports:
       - "${WEB_PORT}:80"
     depends_on:
-      - owl_admin
+      - owl_tiktok_admin
     restart: always
     
   
