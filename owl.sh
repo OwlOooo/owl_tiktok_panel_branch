@@ -5,8 +5,8 @@ RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 NC='\033[0m' # No Color
-COMPOSE_URL='https://raw.githubusercontent.com/OwlOooo/owl_tiktok_panel/main/docker-compose.yml'
-ENV_URL='https://raw.githubusercontent.com/OwlOooo/owl_tiktok_panel/main/.env'
+COMPOSE_URL='https://raw.githubusercontent.com/OwlOooo/owl_tiktok_panel_branch/main/docker-compose.yml'
+ENV_URL='https://raw.githubusercontent.com/OwlOooo/owl_tiktok_panel_branch/main/.env'
 
 OWL_DIR="/owl"
 
