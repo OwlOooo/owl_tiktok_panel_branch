@@ -179,7 +179,7 @@ install_and_start_all() {
     check_env || return 1
     load_env
     
-    echo -e "${YELLOW}此选项将安装并启动nginx, owl_tiktok_admin, owl_tiktok_web${NC}"
+    echo -e "${YELLOW}此选项将安装并启动redis, nginx, owl_tiktok_admin, owl_tiktok_web${NC}"
     read -p "是否继续？ (y/n): " confirm
     if [ "$confirm" != "y" ]; then
         echo -e "${YELLOW}安装已取消。${NC}"
@@ -193,7 +193,7 @@ install_and_start_all() {
         return 1
     fi
 
-    services=("owl_tiktok_admin" "owl_tiktok_web" "nginx")
+    services=("redis" "owl_tiktok_admin" "owl_tiktok_web" "nginx")
     for service in "${services[@]}"; do
          docker-compose up -d ${service}
     done
@@ -319,6 +319,12 @@ show_menu() {
     echo -e "${GREEN} 19.${NC} 停止 nginx"
     echo -e "${GREEN} 20.${NC} 重启 nginx"
     echo -e "${GREEN} 21.${NC} 查看 nginx 日志"
+    echo -e ""
+    echo -e "———————${GREEN}【redis】${NC}—————————"
+    echo -e "${GREEN} 22.${NC} 启动 redis"
+    echo -e "${GREEN} 23.${NC} 停止 redis"
+    echo -e "${GREEN} 24.${NC} 重启 redis"
+    echo -e "${GREEN} 25.${NC} 查看 redis 日志"
     echo -e "———————————————————"
     echo -e "${GREEN}  0.${YELLOW} 退出${NC}"
 }
@@ -327,7 +333,7 @@ show_menu() {
 while true; do
     StartTitle
     show_menu
-    read -p "输入选项 [0-21]: " choice
+    read -p "输入选项 [0-25]: " choice
     case "$choice" in
         1)
             download_compose
@@ -393,6 +399,18 @@ while true; do
             ;;
         21)
             manage_service log nginx
+            ;;
+        22)
+            manage_service start redis
+            ;;
+        23)
+            manage_service stop redis
+            ;;
+        24)
+            manage_service restart redis
+            ;;
+        25)
+            manage_service log redis
             ;;
         0)
             echo "退出脚本。"
