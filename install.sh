@@ -5,7 +5,7 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 YELLOW='\033[0;33m'
 NC='\033[0m'
-script_url="https://raw.githubusercontent.com/OwlOooo/owl_tiktok_panel/main/owl.sh"
+script_url="https://raw.githubusercontent.com/OwlOooo/owl_tiktok_panel_branch/main/owl.sh"
 
 
 
