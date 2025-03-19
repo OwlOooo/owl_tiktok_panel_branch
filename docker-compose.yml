@@ -27,21 +27,26 @@ services:
 
 
   owl_tiktok_admin:
-    container_name: owl_tiktok_admin
-    image: owloooo/owl_tiktok_admin:1.0
-    ports:
-      - "${ADMIN_PORT}:8989"
-    environment:
-      SPRING_PROFILES_ACTIVE: prod
-      JDBC_TYPE: mysql
-      JDBC_DRIVER: com.mysql.cj.jdbc.Driver
-      JDBC_URL: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${OWL_DATABASE}?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
-      JDBC_USERNAME: ${MYSQL_USERNAME}
-      JDBC_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      JDBC_TEST_SQL: SELECT 1
-    depends_on:
-      - mysql
-    restart: always
+  container_name: owl_tiktok_admin
+  image: owloooo/owl_tiktok_admin:1.0
+  ports:
+    - "${ADMIN_PORT}:8989"
+  environment:
+    SPRING_PROFILES_ACTIVE: prod
+    JDBC_TYPE: mysql
+    JDBC_DRIVER: com.mysql.cj.jdbc.Driver
+    JDBC_URL: jdbc:mysql://${MYSQL_HOST}:${MYSQL_PORT}/${OWL_DATABASE}?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+    JDBC_USERNAME: ${MYSQL_USERNAME}
+    JDBC_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    JDBC_TEST_SQL: SELECT 1
+    REDIS_HOST: ${REDIS_HOST}
+    REDIS_PORT: ${REDIS_PORT}
+    REDIS_PASS: ${REDIS_PASS}
+    REDIS_DATABASE: 3
+  depends_on:
+    - mysql
+    - redis
+  restart: always
 
   owl_tiktok_web:
     container_name: owl_tiktok_web
